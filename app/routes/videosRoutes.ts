@@ -1,6 +1,6 @@
 import { getDatabase } from '../database';
 
-const get = (req, res) => {
+const get = (req: any, res: any) => {
   // I use the getDatabase function to get a connection
   // and then have access to query all my videos in the
   // database
@@ -11,7 +11,7 @@ const get = (req, res) => {
   // functions that resemble SQL
   database('videos')
     .select('*')
-    .then((videos) => {
+    .then((videos: any) => {
       // Here I say return an object that contains all the videos
       res.send({
         videos: videos,
@@ -22,6 +22,6 @@ const get = (req, res) => {
     });
 }
 
-export const configureVideoRoutes = (app) => {
+export const configureVideoRoutes = (app: any) => {
   app.get('/api/videos', get);
 };

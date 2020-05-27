@@ -4,7 +4,7 @@ import { configureVideoRoutes } from './routes/videosRoutes';
 const app = express();
 const port = 3000;
 
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
   res.send('Peck Project API');
 });
 
