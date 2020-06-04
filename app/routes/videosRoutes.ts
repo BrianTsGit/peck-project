@@ -9,8 +9,20 @@ const get = (req: any, res: any) => {
   // I am using this database connection which I used
   // the "knex.js" library to create and it gives me 
   // functions that resemble SQL
+
+  // Javascript Promises
+  // const list = getAirBNBHousingLists()
+  //   .then((housingLists) => {
+  //     return getOwner(housingList);
+  //   }.then((owner) => {
+  //     console.log(owner);
+  //   });
+
   database('videos')
-    .select('*')
+    .select([
+      'title',
+      'likes',
+    ])
     .then((videos: any) => {
       // Here I say return an object that contains all the videos
       res.send({
